@@ -18,8 +18,7 @@ function calcBMI(w, h) {
 
 function predictRisk(data) {
   let score = 0;
-  const age = parseInt(data.age);
-  const bmi = parseFloat(calcBMI(data.weight, data.height));
+    const bmi = parseFloat(calcBMI(data.weight, data.height));
   const cycleLen = parseInt(data.cycleLength);
 
   if (bmi >= 25 && bmi < 30) score += 10;
