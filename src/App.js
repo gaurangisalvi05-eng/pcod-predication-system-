@@ -835,7 +835,7 @@ placeholder="e.g. 5"
           {step > 0 && (
             <button className="btn btn-secondary" onClick={() => setStep(s => s - 1)}>← Back</button>
           )}
-          {step < 3 ? (
+          {step < 5 ? (
 
 <button
 className="btn btn-primary"
