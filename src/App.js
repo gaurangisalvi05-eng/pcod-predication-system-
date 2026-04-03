@@ -740,7 +740,7 @@ export default function App() {
         <RadioField label="Vegetables / fruits daily?" name="vegetables" value={data.vegetables}
           options={[{ label: "Rarely", value: "rarely" }, { label: "Sometimes", value: "sometimes" }, { label: "Daily", value: "daily" }]} onChange={set} full />
       </div>
-    </div>
+    </div>,
   ];
 
   if (submitted && risk && recs) {
