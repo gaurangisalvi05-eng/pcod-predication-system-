@@ -841,22 +841,22 @@ placeholder="e.g. 5"
 className="btn btn-primary"
 onClick={() => {
 
-if(step === 0 && (!data.age || !data.weight || !data.height || !data.cycleLength)){
+iif(step === 1 && (!data.age || !data.weight || !data.height || !data.cycleLength)){
 alert("Please fill all personal details")
 return
 }
 
-if(step === 1 && (!data.irregularPeriods || !data.skippedPeriods)){
+if(step === 2 && (!data.irregularPeriods || !data.skippedPeriods)){
 alert("Please answer symptoms questions")
 return
 }
 
-if(step === 2 && (!data.exercise || !data.sleep)){
+if(step === 3 && (!data.exercise || !data.sleep)){
 alert("Please answer lifestyle questions")
 return
 }
 
-if(step === 3 && (!data.junkFood || !data.sugarIntake)){
+if(step === 4 && (!data.junkFood || !data.sugarIntake)){
 alert("Please answer diet questions")
 return
 }
