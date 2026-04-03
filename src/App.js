@@ -1,6 +1,7 @@
 import { useState } from "react";
+import About from "./About";
 
-const STEPS = ["Personal", "Symptoms", "Lifestyle", "Diet", "Results"];
+const STEPS = ["About","Personal", "Symptoms", "Lifestyle", "Diet", "Results"];
 
 const initialData = {
   age: "", weight: "", height: "", cycleLength: "", cycleDuration: "",
@@ -609,7 +610,10 @@ export default function App() {
   const bmi = calcBMI(data.weight, data.height);
 
   const steps = [
-    // Step 0: Personal Info
+<div key={-1} className="card">
+  <About />
+</div>,
+  
     <div key={0} className="card">
       <h2>Personal Information</h2>
       <p>Let's start with some basic details to understand your profile.</p>
