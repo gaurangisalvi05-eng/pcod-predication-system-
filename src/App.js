@@ -676,9 +676,8 @@ export default function App() {
           <div className="bmi-badge">BMI: {bmi} — {bmi < 18.5 ? "Underweight" : bmi < 25 ? "Healthy" : bmi < 30 ? "Overweight" : "Obese"}</div>
         </div>
       )}
-    </div>
+    </div>,
 
-    // Step 1: Symptoms
     <div key={1} className="card">
       <h2>PCOD Symptoms</h2>
       <p>Tell us about any symptoms you've been experiencing. Be as honest as possible for accurate results.</p>
