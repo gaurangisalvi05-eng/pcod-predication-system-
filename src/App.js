@@ -831,6 +831,7 @@ placeholder="e.g. 5"
             <button className="btn btn-secondary" onClick={() => setStep(s => s - 1)}>← Back</button>
           )}
           {step < 3 ? (
+
 <button
 className="btn btn-primary"
 onClick={() => {
@@ -861,5 +862,14 @@ setStep(s => s + 1)
 >
 Continue →
 </button>
+
 ) : (
-}
+
+<button
+className="btn btn-primary"
+onClick={() => setSubmitted(true)}
+>
+View My Results 🔍
+</button>
+
+)}
