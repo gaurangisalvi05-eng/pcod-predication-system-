@@ -803,6 +803,7 @@ placeholder="e.g. 5"
     );
   }
 
+
   return (
     <div className="app">
       <style>{styles}</style>
@@ -873,3 +874,8 @@ View My Results 🔍
 </button>
 
 )}
+        </div>
+      </div>
+    </div>
+  );
+}
