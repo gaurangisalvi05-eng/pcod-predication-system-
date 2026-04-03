@@ -625,7 +625,7 @@ export default function App() {
  required
  onChange={setE}
 />
-placeholder="e.g. 24" min="10" max="60" />
+
         </div>
         <div className="field">
           <label>Weight (kg)</label>
