@@ -617,13 +617,14 @@ export default function App() {
         <div className="field">
           <label>Age (years)</label>
          <input
- type="number"
- name="age"
- placeholder="Enter Age"
- min="12"
- max="60"
- required
- onChange={setE}
+type="number"
+name="age"
+placeholder="Enter Age"
+min="12"
+max="60"
+value={data.age}
+onChange={setE}
+required
 />
 
         </div>
@@ -668,7 +669,15 @@ export default function App() {
         </div>
         <div className="field">
           <label>Period Duration (days)</label>
-          <input type="number" name="cycleDuration" value={data.cycleDuration} onChange={setE} placeholder="e.g. 5" />
+          <input
+type="number"
+name="cycleDuration"
+min="2"
+max="10"
+value={data.cycleDuration}
+onChange={setE}
+placeholder="e.g. 5"
+/>
         </div>
       </div>
       {bmi && (
@@ -699,9 +708,9 @@ export default function App() {
         <RadioField label="Mood swings / anxiety?" name="moodSwings" value={data.moodSwings}
           options={[{ label: "Rarely", value: "rarely" }, { label: "Sometimes", value: "sometimes" }, { label: "Often", value: "often" }]} onChange={set} />
       </div>
-    </div>
+    </div>,
 
-    // Step 2: Lifestyle
+ 
     <div key={2} className="card">
       <h2>Lifestyle Habits</h2>
       <p>Your daily habits significantly impact hormonal health. Answer honestly for better recommendations.</p>
@@ -723,9 +732,9 @@ export default function App() {
             value={data.waterIntake} onChange={set} minLabel="1 glass" maxLabel="15 glasses" />
         </div>
       </div>
-    </div>
+    </div>,
 
-    // Step 3: Diet
+
     <div key={3} className="card">
       <h2>Diet & Nutrition</h2>
       <p>What you eat directly influences your hormone levels and PCOD risk.</p>
@@ -739,7 +748,7 @@ export default function App() {
         <RadioField label="Vegetables / fruits daily?" name="vegetables" value={data.vegetables}
           options={[{ label: "Rarely", value: "rarely" }, { label: "Sometimes", value: "sometimes" }, { label: "Daily", value: "daily" }]} onChange={set} full />
       </div>
-    </div>,
+    </div>
   ];
 
   if (submitted && risk && recs) {
@@ -822,12 +831,35 @@ export default function App() {
             <button className="btn btn-secondary" onClick={() => setStep(s => s - 1)}>← Back</button>
           )}
           {step < 3 ? (
-            <button className="btn btn-primary" onClick={() => setStep(s => s + 1)}>Continue →</button>
-          ) : (
-            <button className="btn btn-primary" onClick={() => setSubmitted(true)}>View My Results 🔍</button>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+<button
+className="btn btn-primary"
+onClick={() => {
+
+if(step === 0 && (!data.age || !data.weight || !data.height || !data.cycleLength)){
+alert("Please fill all personal details")
+return
+}
+
+if(step === 1 && (!data.irregularPeriods || !data.skippedPeriods)){
+alert("Please answer symptoms questions")
+return
+}
+
+if(step === 2 && (!data.exercise || !data.sleep)){
+alert("Please answer lifestyle questions")
+return
+}
+
+if(step === 3 && (!data.junkFood || !data.sugarIntake)){
+alert("Please answer diet questions")
+return
+}
+
+setStep(s => s + 1)
+
+}}
+>
+Continue →
+</button>
+) : (
 }
