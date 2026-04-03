@@ -629,7 +629,7 @@ export default function App() {
         </div>
         <div className="field">
           <label>Weight (kg)</label>
-          <<input
+          <input
  type="number"
  name="weight"
  placeholder="Weight (kg)"
