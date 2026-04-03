@@ -700,7 +700,7 @@ export default function App() {
         <RadioField label="Mood swings / anxiety?" name="moodSwings" value={data.moodSwings}
           options={[{ label: "Rarely", value: "rarely" }, { label: "Sometimes", value: "sometimes" }, { label: "Often", value: "often" }]} onChange={set} />
       </div>
-    </div>,
+    </div>
 
     // Step 2: Lifestyle
     <div key={2} className="card">
@@ -724,7 +724,7 @@ export default function App() {
             value={data.waterIntake} onChange={set} minLabel="1 glass" maxLabel="15 glasses" />
         </div>
       </div>
-    </div>,
+    </div>
 
     // Step 3: Diet
     <div key={3} className="card">
@@ -740,7 +740,7 @@ export default function App() {
         <RadioField label="Vegetables / fruits daily?" name="vegetables" value={data.vegetables}
           options={[{ label: "Rarely", value: "rarely" }, { label: "Sometimes", value: "sometimes" }, { label: "Daily", value: "daily" }]} onChange={set} full />
       </div>
-    </div>,
+    </div>
   ];
 
   if (submitted && risk && recs) {
