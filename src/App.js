@@ -676,7 +676,7 @@ export default function App() {
           <div className="bmi-badge">BMI: {bmi} — {bmi < 18.5 ? "Underweight" : bmi < 25 ? "Healthy" : bmi < 30 ? "Overweight" : "Obese"}</div>
         </div>
       )}
-    </div>,
+    </div>
 
     // Step 1: Symptoms
     <div key={1} className="card">
