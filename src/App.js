@@ -1,5 +1,6 @@
 import { useState } from "react";
 import About from "./About";
+import jsPDF from "jspdf";
 
 const STEPS = ["About","Personal", "Symptoms", "Lifestyle", "Diet", "Results"];
 
@@ -98,6 +99,41 @@ function getRecommendations(data, risk) {
 
   return recs;
 }
+const downloadPDF = () => {
+
+const doc = new jsPDF();
+
+doc.setFontSize(18);
+doc.text("PCOD Risk Prediction Report", 20, 20);
+
+doc.setFontSize(12);
+
+doc.text(`Risk Percentage: ${risk}%`, 20, 40);
+doc.text(`BMI: ${bmi}`, 20, 50);
+
+doc.text("Health Recommendations:", 20, 70);
+
+let y = 80;
+
+recs.forEach(section => {
+
+doc.text(section.title, 20, y);
+y += 10;
+
+section.items.forEach(item => {
+
+doc.text("- " + item, 25, y);
+y += 8;
+
+});
+
+y += 5;
+
+});
+
+doc.save("PCOD_Report.pdf");
+
+};
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
@@ -794,6 +830,13 @@ placeholder="e.g. 5"
               </div>
             ))}
           </div>
+<div style={{marginTop:"20px", textAlign:"center"}}>
+
+<button className="btn btn-primary" onClick={downloadPDF}>
+Download PDF Report
+</button>
+
+</div>
 
           <div className="disclaimer">
             ⚕️ <strong>Medical Disclaimer:</strong> This tool is for educational purposes only and is not a medical diagnosis. PCOD can only be confirmed through clinical tests (ultrasound + hormonal blood panel). Please consult a qualified gynecologist or endocrinologist for professional evaluation and treatment.
