@@ -616,19 +616,55 @@ export default function App() {
       <div className="form-grid">
         <div className="field">
           <label>Age (years)</label>
-          <input type="number" name="age" value={data.age} onChange={setE} placeholder="e.g. 24" min="10" max="60" />
+         <input
+ type="number"
+ name="age"
+ placeholder="Enter Age"
+ min="12"
+ max="60"
+ required
+ onChange={setE}
+/>
+placeholder="e.g. 24" min="10" max="60" />
         </div>
         <div className="field">
           <label>Weight (kg)</label>
-          <input type="number" name="weight" value={data.weight} onChange={setE} placeholder="e.g. 62" />
+          <<input
+ type="number"
+ name="weight"
+ placeholder="Weight (kg)"
+ min="30"
+ max="150"
+ value={data.weight}
+ onChange={setE}
+ required
+/>
         </div>
         <div className="field">
           <label>Height (cm)</label>
-          <input type="number" name="height" value={data.height} onChange={setE} placeholder="e.g. 160" />
+          <input
+ type="number"
+ name="height"
+ placeholder="Height (cm)"
+ min="120"
+ max="200"
+ value={data.height}
+ onChange={setE}
+ required
+/>
         </div>
         <div className="field">
           <label>Menstrual Cycle Length (days)</label>
-          <input type="number" name="cycleLength" value={data.cycleLength} onChange={setE} placeholder="e.g. 28" />
+          <input
+ type="number"
+ name="cycleLength"
+ placeholder="Cycle Length (days)"
+ min="20"
+ max="45"
+ value={data.cycleLength}
+ onChange={setE}
+ required
+/>
         </div>
         <div className="field">
           <label>Period Duration (days)</label>
