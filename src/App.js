@@ -841,7 +841,7 @@ placeholder="e.g. 5"
 className="btn btn-primary"
 onClick={() => {
 
-iif(step === 1 && (!data.age || !data.weight || !data.height || !data.cycleLength)){
+if(step === 1 && (!data.age || !data.weight || !data.height || !data.cycleLength)){
 alert("Please fill all personal details")
 return
 }
